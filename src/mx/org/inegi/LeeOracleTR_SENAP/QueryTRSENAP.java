@@ -47,7 +47,7 @@ public class QueryTRSENAP {
                 + "CATFISCALIAID,\n"
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
-                + "PERIODO FROM TMP_SENAP_DIRECCIONUBICACION WHERE (ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "') and "
+                + "PERIODO FROM RES_TMP_SENAP_DIRECCIONUBICACION WHERE (ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "') and "
                 + " (ENTIDADID||PERIODO||UBICACIONID  NOT IN (SELECT ENTIDADID||PERIODO||UBICACIONID FROM TR_SENAP_DIRECCIONUBICACION))     ";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -125,7 +125,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_NOTICIACRIMINAL WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'   and "
+                + "  FROM RES_TMP_SENAP_NOTICIACRIMINAL WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'   and "
                 + " (ENTIDADID||PERIODO||NOTICIACRIMINALID  NOT IN (SELECT ENTIDADID||PERIODO||NOTICIACRIMINALID FROM TR_SENAP_NOTICIACRIMINAL))     ";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -196,7 +196,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_ATENCIONES WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_ATENCIONES WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||ATENCIONID  NOT IN (SELECT ENTIDADID||PERIODO||ATENCIONID FROM TR_SENAP_ATENCIONES))     ";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -276,7 +276,7 @@ public class QueryTRSENAP {
                 + "DESCRIPCIONHECHOS,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO "
-                + "  FROM TMP_SENAP_CARPETAINVESTIGACION WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'  and "
+                + "  FROM RES_TMP_SENAP_CARPETAINVESTIGACION WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'  and "
                 + " (ENTIDADID||PERIODO||CARPETAID  NOT IN (SELECT ENTIDADID||PERIODO||CARPETAID FROM TR_SENAP_CARPETAINVESTIGACION))     ";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -355,7 +355,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_ASEGURAMIENTOS WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_ASEGURAMIENTOS WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||ENTFISASEGID  NOT IN (SELECT ENTIDADID||PERIODO||ENTFISASEGID FROM TR_SENAP_ASEGURAMIENTOS))     ";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -413,7 +413,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_ACTOSINVESTIGACION WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_ACTOSINVESTIGACION WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||ACTOSID  NOT IN (SELECT ENTIDADID||PERIODO||ACTOSID FROM TR_SENAP_ACTOSINVESTIGACION))     ";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -487,7 +487,7 @@ public class QueryTRSENAP {
                 + "CONVER_RESPUESTASGENERICAS(HUBORECLASIFICACION),\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_DELITOS  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_DELITOS  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||DELITOID  NOT IN (SELECT ENTIDADID||PERIODO||DELITOID FROM TR_SENAP_DELITOS))     ";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -598,7 +598,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE	,\n"
                 + "FECHAACTUALIZACION	,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_VICTIMAS  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'  and "
+                + "  FROM RES_TMP_SENAP_VICTIMAS  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'  and "
                 + " (ENTIDADID||PERIODO||VICTIMAID  NOT IN (SELECT ENTIDADID||PERIODO||VICTIMAID FROM TR_SENAP_VICTIMAS))     ";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -692,7 +692,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_VICTIMASDELITO  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'  and "
+                + "  FROM RES_TMP_SENAP_VICTIMASDELITO  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'  and "
                 + " (ENTIDADID||PERIODO||VICTIMASDELITOID  NOT IN (SELECT ENTIDADID||PERIODO||VICTIMASDELITOID FROM TR_SENAP_VICTIMASDELITO))     ";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -742,7 +742,7 @@ public class QueryTRSENAP {
                 + "VICTIMAID	,\n"
                 + "CONVER_MEDIDAPROTECCION(CATMEDIDAPROTECCION)	,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_MEDIDAS_PROTECCION  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'  and "
+                + "  FROM RES_TMP_SENAP_MEDIDAS_PROTECCION  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'  and "
                 + " (ENTIDADID||PERIODO||MEDIDASPROTECCIONID  NOT IN (SELECT ENTIDADID||PERIODO||MEDIDASPROTECCIONID FROM TR_SENAP_MEDIDAS_PROTECCION))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -841,7 +841,7 @@ public class QueryTRSENAP {
                 + "CONVER_TIPOPERSONAIMPUTADA(CATTIPOPERSONAIMPUTADAID),\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_IMPUTADO  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_IMPUTADO  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||IMPUTADOID  NOT IN (SELECT ENTIDADID||PERIODO||IMPUTADOID FROM TR_SENAP_IMPUTADO))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -950,7 +950,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_IMPUTADODELITO  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_IMPUTADODELITO  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||IMPUTADODELITOID  NOT IN (SELECT ENTIDADID||PERIODO||IMPUTADODELITOID FROM TR_SENAP_IMPUTADODELITO))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -1011,7 +1011,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_VICTIMAIMPUTADO  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_VICTIMAIMPUTADO  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||VICTIMAIMPUTADOID  NOT IN (SELECT ENTIDADID||PERIODO||VICTIMAIMPUTADOID FROM TR_SENAP_VICTIMAIMPUTADO))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -1078,7 +1078,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_DETERMINACION  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_DETERMINACION  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||DETERMINACIONID  NOT IN (SELECT ENTIDADID||PERIODO||DETERMINACIONID FROM TR_SENAP_DETERMINACION))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -1157,7 +1157,7 @@ public class QueryTRSENAP {
                 + "conver_respuestasgenericas(DERIVOMASC),\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_PROCESO  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'  and "
+                + "  FROM RES_TMP_SENAP_PROCESO  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'  and "
                 + " (ENTIDADID||PERIODO||PROCESOID  NOT IN (SELECT ENTIDADID||PERIODO||PROCESOID FROM TR_SENAP_PROCESO))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -1235,7 +1235,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_MASC  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_MASC  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||MASCID  NOT IN (SELECT ENTIDADID||PERIODO||MASCID FROM TR_SENAP_MASC))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -1303,7 +1303,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_ETAPAINVESTIGACION  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'  and "
+                + "  FROM RES_TMP_SENAP_ETAPAINVESTIGACION  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "'  and "
                 + " (ENTIDADID||PERIODO||ETAPAINVESTIGACIONID  NOT IN (SELECT ENTIDADID||PERIODO||ETAPAINVESTIGACIONID FROM TR_SENAP_ETAPAINVESTIGACION))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -1371,7 +1371,7 @@ public class QueryTRSENAP {
                 + "FECHULTESTMAND,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_MANDAMIENTOSJUDICIALES  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_MANDAMIENTOSJUDICIALES  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||MANDAMIENTOJUDICIALID  NOT IN (SELECT ENTIDADID||PERIODO||MANDAMIENTOJUDICIALID FROM TR_SENAP_MANDAMIENTOSJUDICIALES))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -1443,7 +1443,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_INVESTIGACIONCOMPLEMENTARIA  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_INVESTIGACIONCOMPLEMENTARIA  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||INVESTIGACIONCOMPLEMENTARIAID  NOT IN (SELECT ENTIDADID||PERIODO||INVESTIGACIONCOMPLEMENTARIAID FROM TR_SENAP_INVESTIGACIONCOMPLEMENTARIA))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -1511,7 +1511,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_MEDIDASCAUTELARES  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_MEDIDASCAUTELARES  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||MEDIDACAUTELARID  NOT IN (SELECT ENTIDADID||PERIODO||MEDIDACAUTELARID FROM TR_SENAP_MEDIDASCAUTELARES))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -1579,7 +1579,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_ETAPAINTERMEDIA  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_ETAPAINTERMEDIA  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||ETAPAINTERMEDIAID  NOT IN (SELECT ENTIDADID||PERIODO||ETAPAINTERMEDIAID FROM TR_SENAP_ETAPAINTERMEDIA))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -1650,7 +1650,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_SOBRESEIMIENTO  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_SOBRESEIMIENTO  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||SOBRESEIMIENTOID  NOT IN (SELECT ENTIDADID||PERIODO||SOBRESEIMIENTOID FROM TR_SENAP_SOBRESEIMIENTO))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -1720,7 +1720,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_SUSPENSIONCONDICIONAL  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_SUSPENSIONCONDICIONAL  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||SUSPENSIONCONDICIONALID  NOT IN (SELECT ENTIDADID||PERIODO||SUSPENSIONCONDICIONALID FROM TR_SENAP_SUSPENSIONCONDICIONAL))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);
@@ -1795,7 +1795,7 @@ public class QueryTRSENAP {
                 + "FECHACORTE,\n"
                 + "FECHAACTUALIZACION,\n"
                 + "PERIODO\n"
-                + "  FROM TMP_SENAP_SENTENCIA  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
+                + "  FROM RES_TMP_SENAP_SENTENCIA  WHERE ENTIDADID='" + Entidad + "' and PERIODO='" + Periodo + "' and "
                 + " (ENTIDADID||PERIODO||SENTENCIAID  NOT IN (SELECT ENTIDADID||PERIODO||SENTENCIAID FROM TR_SENAP_SENTENCIA))";
         System.out.println(sql);
         ResultSet resul = conexion.consultar(sql);

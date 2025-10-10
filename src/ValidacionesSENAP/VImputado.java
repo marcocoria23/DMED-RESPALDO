@@ -529,7 +529,7 @@ public class VImputado {
         sql = "SELECT ENTIDADID,IMPUTADOID,CARPETAID,PERIODO,\n"
                 + "PERTENECEPOBLACIONLGBTTTI,CATTIPOLGBTTTIID\n"
                 + "FROM \n"
-                + "TMP_SENAP_IMPUTADO\n"
+                + "RES_TR_SENAP_IMPUTADO\n"
                 + "where PERTENECEPOBLACIONLGBTTTI=1 and CATTIPOLGBTTTIID is null\n"
                 + "AND (ENTIDADID='" + Entidad + "' AND PERIODO='" + Periodo + "'  )";
         System.out.println(sql);
@@ -556,7 +556,7 @@ public class VImputado {
         sql = "SELECT ENTIDADID,IMPUTADOID,CARPETAID,PERIODO,\n"
                 + "PERTENECEPOBLACIONLGBTTTI,CATTIPOLGBTTTIID\n"
                 + "FROM \n"
-                + "TMP_SENAP_IMPUTADO\n"
+                + "RES_TR_SENAP_IMPUTADO\n"
                 + "where PERTENECEPOBLACIONLGBTTTI<>1 and CATTIPOLGBTTTIID is not null \n"
                 + "AND (ENTIDADID='" + Entidad + "' AND PERIODO='" + Periodo + "'  )";
         System.out.println(sql);
