@@ -333,8 +333,8 @@ public class IntegraTR extends javax.swing.JFrame {
                             CEstatus.setEnabled(false);
                             jButton1.setEnabled(false);
                             jButton2.setEnabled(false);
-                          /* EliminaTRSENAP ELTR = new EliminaTRSENAP();
-                            ELTR.EliminaTRSENAP(Entidad, Periodo);*/
+                           EliminaTRSENAP ELTR = new EliminaTRSENAP();
+                            ELTR.EliminaTRSENAP(Entidad, Periodo);
                             Q.Limpia_RES_tr_senap_Control(Entidad, Periodo);
                             Q.Inserta_RES_tr_senap_Control(Entidad, Periodo);
                             LTabla.setText("...Insertando RES_TR_SENAP_DIRECCIONUBICACION");

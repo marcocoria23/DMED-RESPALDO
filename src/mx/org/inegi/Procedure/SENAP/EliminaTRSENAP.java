@@ -27,7 +27,7 @@ public class EliminaTRSENAP {
         
       try {
      
-         st = con.prepareCall("{call DELETETR(?,?)}");
+         st = con.prepareCall("{call ELIMINA_RES_TR(?,?)}");
             // Registra el parámetro de salida
             st.setString(1, Entidad);
             st.setString(2, Periodo);
