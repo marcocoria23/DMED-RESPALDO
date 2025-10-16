@@ -27,6 +27,10 @@ public class MenuProyectos extends javax.swing.JFrame {
     public MenuProyectos() {
         initComponents();
         this.setLocationRelativeTo(null);
+        PLE.setVisible(false);
+        PS.setVisible(false);
+        PS2.setVisible(false);
+        jToggleButton1.setVisible(false);
     }
 
     /**
