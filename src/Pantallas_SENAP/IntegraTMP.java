@@ -57,6 +57,7 @@ public class IntegraTMP extends javax.swing.JFrame {
      */
     public static String Entidad = "", Periodo = "", BDSQL = "", Server = "", Usuario = "", Pass = "";
     public static boolean ventanaAbierta = false;
+    public static  boolean selectServidor = false;
     ArrayList<String[]> ArrayResult;
 
     public IntegraTMP() {
@@ -549,8 +550,23 @@ public class IntegraTMP extends javax.swing.JFrame {
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Por el momento no se encuentra habilitado el espacio en el servidor INEGI");
-        jRadioButton1.setSelected(false);
+       // JOptionPane.showMessageDialog(null, "Por el momento no se encuentra habilitado el espacio en el servidor INEGI");
+       // jRadioButton1.setSelected(false);  
+       if (jRadioButton1.isSelected()==true){
+        selectServidor=true;   
+        TServerName.setText("W-BDCLPRO8\\BD8");
+        TLogin.setText("senap.owner");
+        TPassword.setText("Inegi_Senap2025");    
+        //JOptionPane.showMessageDialog(null, "Por el momento no se encuentra habilitado el espacio en el servidor INEGI");
+       }else{
+        selectServidor=false;   
+        TServerName.setText("");
+        TLogin.setText("");
+        TPassword.setText("");
+       }
+        
+        
+        
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     public void Valores() {

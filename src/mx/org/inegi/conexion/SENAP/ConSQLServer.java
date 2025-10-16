@@ -23,12 +23,22 @@ public class ConSQLServer {
     public ConSQLServer Conectar() { 
       try { 
             // Registrar el controlador JDBC para SQL Server
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+          Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
  
             // URL de conexión a SQL Server
            //String baseDeDatos = "jdbc:sqlserver://GSJPCN069519L:1433;databaseName="+DB+";encrypt=true;trustServerCertificate=true;";
           IntegraTMP In=new IntegraTMP();
-           String baseDeDatos = "jdbc:sqlserver://"+In.Server+":1433;databaseName=master;encrypt=true;trustServerCertificate=true;";
+          String baseDeDatos="";
+          
+          
+          if (In.selectServidor==true)
+          {
+          baseDeDatos = "jdbc:sqlserver://"+In.Server+";databaseName=master;encrypt=true;trustServerCertificate=true;";    
+          }else{
+           baseDeDatos = "jdbc:sqlserver://"+In.Server+":1433;databaseName=master;encrypt=true;trustServerCertificate=true;";    
+          }
+          
+           
            System.out.println("++++bd"+baseDeDatos+"user:"+In.Usuario+"Pass:"+In.Pass);
            //  String baseDeDatos = "jdbc:sqlserver://MARCOCORIA\\SQLEXPRESS;databaseName=master;encrypt=true;trustServerCertificate=true;";
             conexion = DriverManager.getConnection(baseDeDatos,In.Usuario,In.Pass);  

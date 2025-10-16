@@ -53,7 +53,7 @@ public class QuerySQLServer {
     
     public ArrayList Nombre_Base() throws SQLException{
         System.out.println("bdddddd"+tmp.BDSQL);
- Con.Conectar();
+  Con.Conectar();
   Array = new ArrayList();
       sql="SELECT NAME FROM sys.databases where upper(NAME) LIKE 'SENAP%'";
       System.out.println(sql);
