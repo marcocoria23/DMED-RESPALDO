@@ -36,8 +36,15 @@ public class ConDinamicSQLSERVER {
             // URL de conexión a SQL Server
            //String baseDeDatos = "jdbc:sqlserver://GSJPCN069519L:1433;databaseName="+DB+";encrypt=true;trustServerCertificate=true;";
           IntegraTMP In=new IntegraTMP();
-           String baseDeDatos = "jdbc:sqlserver://"+In.Server+":1433;databaseName="+DB+";encrypt=true;trustServerCertificate=true;";
-           //  String baseDeDatos = "jdbc:sqlserver://MARCOCORIA\\SQLEXPRESS;databaseName=master;encrypt=true;trustServerCertificate=true;";
+           String baseDeDatos="";
+          
+          if (In.selectServidor==true)
+          {
+          baseDeDatos = "jdbc:sqlserver://"+In.Server+";databaseName="+DB+";encrypt=true;trustServerCertificate=true;";    
+          }else{
+           baseDeDatos = "jdbc:sqlserver://"+In.Server+":1433;databaseName="+DB+";encrypt=true;trustServerCertificate=true;";    
+          }
+          
             conexion = DriverManager.getConnection(baseDeDatos, ""+In.Usuario+"", ""+In.Pass+"");  
             if (conexion != null) { 
                 System.out.println("Conexión exitosa!"); 
