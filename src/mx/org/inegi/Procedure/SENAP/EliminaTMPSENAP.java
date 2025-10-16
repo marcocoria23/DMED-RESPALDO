@@ -26,7 +26,7 @@ public class EliminaTMPSENAP {
         
       try {
      
-         st = con.prepareCall("{call DELETE_RES_TMP(?,?)}");
+         st = con.prepareCall("{call RES_DELETETMP(?,?)}");
             // Registra el parámetro de salida
             st.setString(1, Entidad);
             st.setString(2, Periodo);
