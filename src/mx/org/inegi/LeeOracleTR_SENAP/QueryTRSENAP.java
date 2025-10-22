@@ -1281,7 +1281,7 @@ public class QueryTRSENAP {
         return arrayList;
     }
 
-    public ArrayList<ArrayList<String>> TMP_SENAP_ETAPAINVESTIGACION(String Entidad, String Periodo) throws SQLException {
+ /*   public ArrayList<ArrayList<String>> TMP_SENAP_ETAPAINVESTIGACION(String Entidad, String Periodo) throws SQLException {
         conexion.Conectar();
         String sql = "SELECT \n"
                 + "ENTIDADID,\n"
@@ -1345,7 +1345,7 @@ public class QueryTRSENAP {
             }
         }
         return arrayList;
-    }
+    }*/
 
     public ArrayList<ArrayList<String>> TMP_SENAP_MANDAMIENTOSJUDICIALES(String Entidad, String Periodo) throws SQLException {
         conexion.Conectar();

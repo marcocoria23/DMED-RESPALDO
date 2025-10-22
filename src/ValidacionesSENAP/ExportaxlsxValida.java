@@ -50,7 +50,7 @@ public class ExportaxlsxValida {
     String parts0 = "", parts1 = "", parts2 = "", partsfechas = "";
     JFrame f = new JFrame("Progreso Exporta SENAP.xlsx");
 
-    public void ValidacionSENAP() throws IOException, SQLException {
+    public void ValidacionSENAP(String TextoSeleccionado) throws IOException, SQLException {
 
         Valida val = new Valida();
         f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -362,8 +362,11 @@ public class ExportaxlsxValida {
         hojaSENT.setColumnWidth(3, 4000);
         hojaSENT.setColumnWidth(4, 4000);
 
-        Despliega_Conteos(libro, hojaConteos, estiloCeldaConteos, ResulestiloCeldaConteos, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
-       /* Despliega_NoticiaCriminal(libro, hojaNC, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+       
+        
+      if (TextoSeleccionado.equals("Todo")){
+        Despliega_Conteos(libro, hojaConteos, estiloCeldaConteos, ResulestiloCeldaConteos, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);  
+        Despliega_NoticiaCriminal(libro, hojaNC, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
         Despliega_Atenciones(libro, hojaATN, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
         Despliega_CarpetaInvestigacion(libro, hojaCI, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
         Despliega_Delitos(libro, hojaDel, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
@@ -379,9 +382,32 @@ public class ExportaxlsxValida {
         Despliega_Sobreseimiento(libro, hojaSOBR, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
         Despliega_SuspencionCondicional(libro, hojaSPCON, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
         Despliega_Sentencia(libro, hojaSENT, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
-*/
-        SaveFileTo(libro, progressBar, f, dtf, val.Entidad, val.Periodo);
-
+      }
+              
+        if (TextoSeleccionado.equals("Conteo")){
+        Despliega_Conteos(libro, hojaConteos, estiloCeldaConteos, ResulestiloCeldaConteos, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        
+        
+        }
+        if (TextoSeleccionado.equals("Validacion")){
+        Despliega_NoticiaCriminal(libro, hojaNC, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_Atenciones(libro, hojaATN, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_CarpetaInvestigacion(libro, hojaCI, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_Delitos(libro, hojaDel, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_Victimas(libro, hojavic, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_Imputado(libro, hojaIMP, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_Determinacion(libro, hojaDET, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_Proceso(libro, hojaPROC, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_MASC(libro, hojaMASC, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_MandamientosJudiciales(libro, hojaMJ, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_MedidaCautelar(libro, hojaMC, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_InvestigacionComplementaria(libro, hojaIC, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_EtapaIntermedia(libro, hojaEI, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_Sobreseimiento(libro, hojaSOBR, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_SuspencionCondicional(libro, hojaSPCON, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+        Despliega_Sentencia(libro, hojaSENT, estiloCelda0, estiloCelda1, estiloCeldabordes0, progressBar, val.Entidad, val.Periodo);
+       }
+       SaveFileTo(libro, progressBar, f, dtf, val.Entidad, val.Periodo);
     }
 
     public void ConteosSENAP() throws IOException, SQLException {

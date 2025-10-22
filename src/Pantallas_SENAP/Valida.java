@@ -29,7 +29,7 @@ public class Valida extends javax.swing.JFrame {
     /**
      * Creates new form Valida
      */
-    public static String Entidad = "", Periodo = "";
+    public static String Entidad = "", Periodo = "",Sval="";
 
     public Valida() {
         initComponents();
@@ -56,7 +56,7 @@ public class Valida extends javax.swing.JFrame {
         CEntidad = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
         CPeriodo = new javax.swing.JComboBox<>();
-        jButton2 = new javax.swing.JButton();
+        actividad = new javax.swing.JComboBox<>();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -135,11 +135,16 @@ public class Valida extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Conteo_senap.jpg"))); // NOI18N
-        jButton2.setText("Conteo");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        CPeriodo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                CPeriodoActionPerformed(evt);
+            }
+        });
+
+        actividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Validacion", "Conteo", "Todo" }));
+        actividad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actividadActionPerformed(evt);
             }
         });
 
@@ -154,22 +159,25 @@ public class Valida extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(CEntidad, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(CPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(ENVIO1)
+                        .addComponent(actividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(31, 31, 31))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(CEntidad, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(CPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(ENVIO1)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(31, 31, 31))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,11 +192,11 @@ public class Valida extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CEntidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(actividad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+                .addGap(89, 89, 89))
         );
 
         pack();
@@ -198,8 +206,11 @@ public class Valida extends javax.swing.JFrame {
         // TODO add your handling code here:
         new Thread(() -> {
             Valores();
+            Object selectedItem = actividad.getSelectedItem();
+            String textoSeleccionado = selectedItem.toString();
             System.out.println("Entidad" + Entidad);
             System.out.println("Periodo" + Periodo);
+            System.out.println("Actividad" + textoSeleccionado);
             if (!Periodo.equals("")) {
                 ExportaxlsxValida Val = new ExportaxlsxValida();
                 try {
@@ -208,7 +219,7 @@ public class Valida extends javax.swing.JFrame {
                     CPeriodo.setEnabled(false);
                     QueryOracle Q = new QueryOracle();
                     Q.Actualiza_Estatus_Validacion(Entidad, Periodo);
-                    Val.ValidacionSENAP();
+                    Val.ValidacionSENAP(textoSeleccionado);
                     CEntidad.setEnabled(true);
                     CPeriodo.setEnabled(true);
                     jButton1.setEnabled(true);
@@ -229,6 +240,7 @@ public class Valida extends javax.swing.JFrame {
         if (CPeriodo.getSelectedItem() == null) {
         } else {
             Periodo = CPeriodo.getSelectedItem().toString();
+            Sval=actividad.getSelectedItem().toString();
         }
     }
 
@@ -266,36 +278,13 @@ public class Valida extends javax.swing.JFrame {
         LLena_combo_Periodo();
     }//GEN-LAST:event_CEntidadActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void actividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actividadActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_actividadActionPerformed
 
-        new Thread(() -> {
-            Valores();
-            System.out.println("Entidad" + Entidad);
-            System.out.println("Periodo" + Periodo);
-            if (!Periodo.equals("")) {
-                ExportaxlsxValida val = new ExportaxlsxValida();
-                try {
-                    jButton1.setEnabled(false); 
-                    CEntidad.setEnabled(false);
-                    CPeriodo.setEnabled(false);
-                    QueryOracle Q = new QueryOracle();
-                    Q.Actualiza_Estatus_Validacion(Entidad, Periodo);
-                    val.ValidacionSENAP();
-                    CEntidad.setEnabled(true);
-                    CPeriodo.setEnabled(true);
-                    jButton1.setEnabled(true);
-                } catch (IOException ex) {
-                    Logger.getLogger(IntegraTMP.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (SQLException ex) {
-                    Logger.getLogger(IntegraTMP.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            } else {
-                JOptionPane.showMessageDialog(null, "Favor de Seleccionar un periodo");
-            }
-        }).start();
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void CPeriodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CPeriodoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CPeriodoActionPerformed
     
     /**
      * @param args the command line arguments
@@ -336,8 +325,8 @@ public class Valida extends javax.swing.JFrame {
     private javax.swing.JComboBox CEntidad;
     private javax.swing.JComboBox<String> CPeriodo;
     private javax.swing.JLabel ENVIO1;
+    private javax.swing.JComboBox<String> actividad;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

@@ -23,7 +23,7 @@ public void Agrega_CarpetaID(String Entidad,String Periodo) throws SQLException{
         
       try {
      
-         st = con.prepareCall("{call AGREGA_CARPETAID(?,?)}");
+         st = con.prepareCall("{call AGREGA_RES_CARPETAID(?,?)}");
             // Registra el parámetro de salida
             st.setString(1, Entidad);
             st.setString(2, Periodo);

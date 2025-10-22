@@ -83,7 +83,7 @@ public class TR_SENAP_MASC {
                 System.out.println("entro 3");
                 array_to_pass = new ARRAY(descriptor, con, structs);
                 System.out.println("entro 4");
-                st = con.prepareCall("{? = call(PKG_INTEGRADOR_SENAP_BAK_TR.TR_SENAP_MASC(?))}");
+                st = con.prepareCall("{? = call(RES_PKG_INTEGRADOR_SENAP_BAK_TR.RES_TR_SENAP_MASC(?))}");
                 System.out.println("entro 5");
                 st.registerOutParameter(1, OracleTypes.INTEGER);
                 System.out.println("entro 6");

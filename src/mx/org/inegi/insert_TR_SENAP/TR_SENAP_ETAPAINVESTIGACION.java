@@ -27,7 +27,7 @@ public class TR_SENAP_ETAPAINVESTIGACION {
 
     public void TR_SENAP_ETAPAINVESTIGACION(String Entidad, String Periodo) throws Exception {
 
-        ARRAY array_to_pass;
+        /*ARRAY array_to_pass;
         ArrayList<ArrayList<String>> fila;
         CallableStatement st;
         Connection con = null;
@@ -39,7 +39,7 @@ public class TR_SENAP_ETAPAINVESTIGACION {
 
         try {
 
-            ArrayList<BeanTR_SENAP_ETAPAINVESTIGACION> ad = new ArrayList<>();
+           ArrayList<BeanTR_SENAP_ETAPAINVESTIGACION> ad = new ArrayList<>();
             QueryTRSENAP DBOData = new QueryTRSENAP();
             fila = DBOData.TMP_SENAP_ETAPAINVESTIGACION(Entidad, Periodo);
             for (int i = 0; i < fila.size(); i++) {
@@ -81,7 +81,7 @@ public class TR_SENAP_ETAPAINVESTIGACION {
                 System.out.println("entro 3");
                 array_to_pass = new ARRAY(descriptor, con, structs);
                 System.out.println("entro 4");
-                st = con.prepareCall("{? = call(PKG_INTEGRADOR_SENAP_BAK_TR.TR_SENAP_ETAPAINVESTIGACION(?))}");
+                st = con.prepareCall("{? = call(RES_PKG_INTEGRADOR_SENAP_BAK_TR.RES_TR_SENAP_ETAPAINVESTIGACION(?))}");
                 System.out.println("entro 5");
                 st.registerOutParameter(1, OracleTypes.INTEGER);
                 System.out.println("entro 6");
@@ -107,7 +107,7 @@ public class TR_SENAP_ETAPAINVESTIGACION {
             } catch (SQLException ex) {
                 throw new SQLException("[actualiza]: " + ex.getLocalizedMessage());
             }
-        }
+        }*/
     }
 
 }

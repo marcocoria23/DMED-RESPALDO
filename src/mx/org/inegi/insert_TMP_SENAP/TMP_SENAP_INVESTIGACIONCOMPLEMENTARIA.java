@@ -85,7 +85,7 @@ public class TMP_SENAP_INVESTIGACIONCOMPLEMENTARIA {
                 System.out.println("entro 3");
                 array_to_pass = new ARRAY(descriptor, con, structs);
                 System.out.println("entro 4");
-                st = con.prepareCall("{? = call(PKG_INTEGRADOR_SENAP_BAK.TMP_SENAP_INVESTIGACIONCOMPLEMENTARIA(?))}");
+                st = con.prepareCall("{? = call(RES_PKG_INTEGRADOR_SENAP_BAK.RES_TMP_SENAP_INVESTIGACIONCOMPLEMENTARIA(?))}");
                 System.out.println("entro 5");
                 st.registerOutParameter(1, OracleTypes.INTEGER);
                 System.out.println("entro 6");
